@@ -1,0 +1,155 @@
+WARNING: The Carbon driver has not been ported to 64bits, and very few parts of Windows.Forms will work properly, or at all
+Stacktrace:
+
+  at <unknown> <0xffffffff>
+  at (wrapper managed-to-native) System.Windows.Forms.XplatUICarbon.CGDisplayBounds (intptr) [0x00009] in <6673d7101e044ca5890b94a28ed667e8>:0
+  at System.Windows.Forms.XplatUICarbon.get_WorkingArea () [0x00000] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/XplatUICarbon.cs:2263
+  at System.Windows.Forms.XplatUICarbon.get_VirtualScreen () [0x00000] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/XplatUICarbon.cs:2257
+  at System.Windows.Forms.XplatUI.get_VirtualScreen () [0x00000] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/XplatUI.cs:420
+  at System.Windows.Forms.Screen..cctor () [0x00034] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Screen.cs:53
+  at (wrapper runtime-invoke) object.runtime_invoke_void (object,intptr,intptr,intptr) [0x0001f] in <fcc8a7c6b1e64f94993a28ac946018c9>:0
+  at <unknown> <0xffffffff>
+  at System.Windows.Forms.Form.get_CreateParams () [0x00157] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Form.cs:1368
+  at System.Windows.Forms.Control.CreateHandle () [0x0002a] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Control.cs:4214
+  at System.Windows.Forms.Form.CreateHandle () [0x00000] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Form.cs:1913
+  at System.Windows.Forms.Control.CreateControl () [0x00039] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Control.cs:3529
+  at System.Windows.Forms.Control.SetVisibleCore (bool) [0x0003a] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Control.cs:4770
+  at System.Windows.Forms.Form.SetVisibleCore (bool) [0x00065] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Form.cs:2380
+  at System.Windows.Forms.Control.set_Visible (bool) [0x00009] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Control.cs:3200
+  at (wrapper remoting-invoke-with-check) System.Windows.Forms.Control.set_Visible (bool) [0x00033] in <6673d7101e044ca5890b94a28ed667e8>:0
+  at System.Windows.Forms.Application.RunLoop (bool,System.Windows.Forms.ApplicationContext) [0x00053] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs:795
+  at System.Windows.Forms.Application.Run (System.Windows.Forms.ApplicationContext) [0x00011] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs:696
+  at System.Windows.Forms.Application.Run (System.Windows.Forms.Form) [0x00000] in /private/tmp/source-mono-2017-02/bockbuild-2017-02/profiles/mono-mac-xamarin/build-root/mono-x86/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs:679
+  at BTWrapper.Program.Main () [0x0000e] in /Users/kato/Projects/test2/test2/MainForm/Program.cs:18
+  at (wrapper runtime-invoke) object.runtime_invoke_void (object,intptr,intptr,intptr) [0x0004d] in <fcc8a7c6b1e64f94993a28ac946018c9>:0
+
+Native stacktrace:
+
+	0   test2                               0x000000010400df36 mono_handle_native_crash + 278
+	1   test2                               0x0000000103f87856 altstack_handle_and_restore + 70
+	2   SkyLight                            0x00007fffb2d5d621 SLDisplayBounds + 50
+	3   ???                                 0x000000010afccd6a 0x0 + 4479307114
+	4   ???                                 0x00000001046f921f 0x0 + 4369388063
+	5   test2                               0x000000010401ee45 mono_jit_runtime_invoke + 2261
+	6   test2                               0x00000001040e7658 do_runtime_invoke + 88
+	7   test2                               0x00000001040e359d mono_runtime_class_init_full + 1005
+	8   test2                               0x000000010402bf50 mono_jit_compile_method_inner + 2416
+	9   test2                               0x000000010401b186 mono_jit_compile_method_with_opt + 710
+	10  test2                               0x0000000104021581 common_call_trampoline + 1137
+	11  test2                               0x00000001040210d9 mono_magic_trampoline + 73
+	12  ???                                 0x000000010466639e 0x0 + 4368786334
+	13  ???                                 0x000000010aa9361e 0x0 + 4473828894
+	14  ???                                 0x0000000107588d00 0x0 + 4418211072
+	15  ???                                 0x00000001075883ca 0x0 + 4418208714
+
+Debug info from gdb:
+
+(lldb) command source -s 0 '/tmp/mono-gdb-commands.HYsyVJ'
+Executing commands in '/tmp/mono-gdb-commands.HYsyVJ'.
+(lldb) process attach --pid 5569
+warning: (x86_64) /Users/kato/Projects/test2/test2/bin/Debug/test2.app/Contents/MonoBundle/libglib-2.0.0.dylib empty dSYM file detected, dSYM was created with an executable with no debug info.
+Process 5569 stopped
+* thread #1: tid = 0x4061d3, 0x00007fffb6a71482 libsystem_kernel.dylib`__wait4 + 10, name = 'tid_307', queue = 'com.apple.main-thread', stop reason = signal SIGSTOP
+    frame #0: 0x00007fffb6a71482 libsystem_kernel.dylib`__wait4 + 10
+libsystem_kernel.dylib`__wait4:
+->  0x7fffb6a71482 <+10>: jae    0x7fffb6a7148c            ; <+20>
+    0x7fffb6a71484 <+12>: movq   %rax, %rdi
+    0x7fffb6a71487 <+15>: jmp    0x7fffb6a69d04            ; cerror
+    0x7fffb6a7148c <+20>: retq   
+
+Executable module set to "/Users/kato/Projects/test2/test2/bin/Debug/test2.app/Contents/MacOS/test2".
+Architecture set to: x86_64h-apple-macosx.
+(lldb) thread list
+Process 5569 stopped
+* thread #1: tid = 0x4061d3, 0x00007fffb6a71482 libsystem_kernel.dylib`__wait4 + 10, name = 'tid_307', queue = 'com.apple.main-thread', stop reason = signal SIGSTOP
+  thread #2: tid = 0x4061e1, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+  thread #3: tid = 0x4061e2, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+  thread #4: tid = 0x4061e3, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+  thread #5: tid = 0x4061ec, 0x00007fffb6a70c86 libsystem_kernel.dylib`__psynch_cvwait + 10, name = 'SGen worker'
+  thread #6: tid = 0x4061ee, 0x00007fffb6a693c6 libsystem_kernel.dylib`semaphore_wait_trap + 10, name = 'Finalizer'
+  thread #7: tid = 0x4061ef, 0x00007fffb6a70e8a libsystem_kernel.dylib`__recvfrom + 10, name = 'Debugger agent'
+  thread #8: tid = 0x4061f7, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+  thread #9: tid = 0x4061f8, 0x0000000000000000
+(lldb) thread backtrace all
+* thread #1: tid = 0x4061d3, 0x00007fffb6a71482 libsystem_kernel.dylib`__wait4 + 10, name = 'tid_307', queue = 'com.apple.main-thread', stop reason = signal SIGSTOP
+  * frame #0: 0x00007fffb6a71482 libsystem_kernel.dylib`__wait4 + 10
+    frame #1: 0x000000010400dfcd test2`mono_handle_native_crash(signal="SIGSEGV", ctx=<unavailable>, info=<unavailable>) + 429 at mini-exceptions.c:2567 [opt]
+    frame #2: 0x0000000103f87856 test2`altstack_handle_and_restore(ctx=0x00007fff5bcfafd0, obj=0x0000000000000000, stack_ovf=0) + 70 at exceptions-amd64.c:780 [opt]
+    frame #3: 0x00007fffb2d5d621 SkyLight`SLDisplayBounds + 50
+    frame #4: 0x000000010afccd6a
+    frame #5: 0x00000001046f921f
+    frame #6: 0x000000010401ee45 test2`mono_jit_runtime_invoke(method=<unavailable>, obj=0x0000000000000000, params=<unavailable>, error=<unavailable>) + 2261 at mini-runtime.c:2533 [opt]
+    frame #7: 0x00000001040e7658 test2`do_runtime_invoke(method=0x00007f867a223198, obj=0x0000000000000000, params=0x0000000000000000, exc=0x00007fff5bcfb958, error=0x00007fff5bcfbb58) + 88 at object.c:2860 [opt]
+    frame #8: 0x00000001040e359d test2`mono_runtime_class_init_full [inlined] mono_runtime_try_invoke(method=<unavailable>, obj=<unavailable>, params=<unavailable>, error=0x00007fff5bcfbb58) + 1005 at object.c:2971 [opt]
+    frame #9: 0x00000001040e355c test2`mono_runtime_class_init_full(vtable=0x00007f867a997408, error=0x00007fff5bcfbb58) + 940 at object.c:474 [opt]
+    frame #10: 0x000000010402bf50 test2`mono_jit_compile_method_inner(method=<unavailable>, target_domain=<unavailable>, opt=<unavailable>, error=0x00007fff5bcfbb58) + 2416 at mini.c:4365 [opt]
+    frame #11: 0x000000010401b186 test2`mono_jit_compile_method_with_opt(method=<unavailable>, opt=<unavailable>, error=0x00007fff5bcfbb58) + 710 at mini-runtime.c:1888 [opt]
+    frame #12: 0x0000000104021581 test2`common_call_trampoline(regs=0x00007fff5bcfbc38, code="H\x89\x85øýÿÿA», m=<unavailable>, vt=0x0000000000000000, vtable_slot=0x0000000000000000, error=0x00007fff5bcfbb58) + 1137 at mini-trampolines.c:699 [opt]
+    frame #13: 0x00000001040210d9 test2`mono_magic_trampoline(regs=<unavailable>, code=<unavailable>, arg=<unavailable>, tramp=<unavailable>) + 73 at mini-trampolines.c:829 [opt]
+    frame #14: 0x000000010466639e
+    frame #15: 0x000000010aa9361e
+    frame #16: 0x0000000107588d00
+
+  thread #2: tid = 0x4061e1, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #0: 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #1: 0x00007fffb6b59791 libsystem_pthread.dylib`_pthread_wqthread + 1426
+    frame #2: 0x00007fffb6b591ed libsystem_pthread.dylib`start_wqthread + 13
+
+  thread #3: tid = 0x4061e2, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #0: 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #1: 0x00007fffb6b595fe libsystem_pthread.dylib`_pthread_wqthread + 1023
+    frame #2: 0x00007fffb6b591ed libsystem_pthread.dylib`start_wqthread + 13
+
+  thread #4: tid = 0x4061e3, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #0: 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #1: 0x00007fffb6b59791 libsystem_pthread.dylib`_pthread_wqthread + 1426
+    frame #2: 0x00007fffb6b591ed libsystem_pthread.dylib`start_wqthread + 13
+
+  thread #5: tid = 0x4061ec, 0x00007fffb6a70c86 libsystem_kernel.dylib`__psynch_cvwait + 10, name = 'SGen worker'
+    frame #0: 0x00007fffb6a70c86 libsystem_kernel.dylib`__psynch_cvwait + 10
+    frame #1: 0x00007fffb6b5a96a libsystem_pthread.dylib`_pthread_cond_wait + 712
+    frame #2: 0x00000001041a80c5 test2`thread_func [inlined] mono_os_cond_wait(mutex=0x000000010437d0b8) + 15 at mono-os-mutex.h:146 [opt]
+    frame #3: 0x00000001041a80b6 test2`thread_func(thread_data=0x0000000000000000) + 230 at sgen-thread-pool.c:129 [opt]
+    frame #4: 0x00007fffb6b59aab libsystem_pthread.dylib`_pthread_body + 180
+    frame #5: 0x00007fffb6b599f7 libsystem_pthread.dylib`_pthread_start + 286
+    frame #6: 0x00007fffb6b591fd libsystem_pthread.dylib`thread_start + 13
+
+  thread #6: tid = 0x4061ee, 0x00007fffb6a693c6 libsystem_kernel.dylib`semaphore_wait_trap + 10, name = 'Finalizer'
+    frame #0: 0x00007fffb6a693c6 libsystem_kernel.dylib`semaphore_wait_trap + 10
+    frame #1: 0x00000001040811e3 test2`finalizer_thread [inlined] mono_os_sem_wait(flags=MONO_SEM_FLAGS_ALERTABLE) + 11 at mono-os-semaphore.h:90 [opt]
+    frame #2: 0x00000001040811d8 test2`finalizer_thread [inlined] mono_coop_sem_wait(flags=MONO_SEM_FLAGS_ALERTABLE) + 8 at mono-coop-semaphore.h:40 [opt]
+    frame #3: 0x00000001040811d0 test2`finalizer_thread(unused=<unavailable>) + 176 at gc.c:907 [opt]
+    frame #4: 0x0000000104133f03 test2`start_wrapper [inlined] start_wrapper_internal + 302 at threads.c:837 [opt]
+    frame #5: 0x0000000104133dd5 test2`start_wrapper(data=<unavailable>) + 37 at threads.c:889 [opt]
+    frame #6: 0x00000001041bfe21 test2`inner_start_thread(data=<unavailable>) + 193 at mono-threads.c:1170 [opt]
+    frame #7: 0x00007fffb6b59aab libsystem_pthread.dylib`_pthread_body + 180
+    frame #8: 0x00007fffb6b599f7 libsystem_pthread.dylib`_pthread_start + 286
+    frame #9: 0x00007fffb6b591fd libsystem_pthread.dylib`thread_start + 13
+
+  thread #7: tid = 0x4061ef, 0x00007fffb6a70e8a libsystem_kernel.dylib`__recvfrom + 10, name = 'Debugger agent'
+    frame #0: 0x00007fffb6a70e8a libsystem_kernel.dylib`__recvfrom + 10
+    frame #1: 0x0000000103f75ab9 test2`socket_transport_recv(buf="Þd", len=11) + 137 at debugger-agent.c:1143 [opt]
+    frame #2: 0x0000000103f64d23 test2`debugger_thread [inlined] transport_recv(len=11) + 30 at debugger-agent.c:1549 [opt]
+    frame #3: 0x0000000103f64d05 test2`debugger_thread(arg=<unavailable>) + 661 at debugger-agent.c:10157 [opt]
+    frame #4: 0x00000001041bfe21 test2`inner_start_thread(data=<unavailable>) + 193 at mono-threads.c:1170 [opt]
+    frame #5: 0x00007fffb6b59aab libsystem_pthread.dylib`_pthread_body + 180
+    frame #6: 0x00007fffb6b599f7 libsystem_pthread.dylib`_pthread_start + 286
+    frame #7: 0x00007fffb6b591fd libsystem_pthread.dylib`thread_start + 13
+
+  thread #8: tid = 0x4061f7, 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #0: 0x00007fffb6a714e2 libsystem_kernel.dylib`__workq_kernreturn + 10
+    frame #1: 0x00007fffb6b595fe libsystem_pthread.dylib`_pthread_wqthread + 1023
+    frame #2: 0x00007fffb6b591ed libsystem_pthread.dylib`start_wqthread + 13
+
+  thread #9: tid = 0x4061f8, 0x0000000000000000
+    frame #0: 0x0000000000000000
+(lldb) detach
+
+=================================================================
+Got a SIGSEGV while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries 
+used by your application.
+=================================================================
+
+Process 5569 detached
+(lldb) (lldb) quit
